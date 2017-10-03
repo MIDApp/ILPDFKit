@@ -178,9 +178,6 @@ void checkKeys(const char *key,CGPDFObjectRef value,void *info) {
         for (ILPDFName *key in keys) {
            id set = (_dict != NULL ? [self pdfObjectFromKey:key]:nsdFiller[key]);
            if (set != nil) {
-              if ([set isKindOfClass:[ILPDFDictionary class]]) {
-                    [set setParent:self];
-              }
               temp[key] = set;
            }
         }
